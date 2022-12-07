@@ -1,0 +1,44 @@
+$font-family: sans-serif;
+
+$color-header-text: #f0f6fc;
+$color-fg-default: #c9d1d9;
+$color-fg-muted: #8b949e;
+$color-bg-default: #010409;
+$color-bg-disabled: #00000080;
+$color-bg-secondary: #161b22;
+$color-bg-card: #0d1117;
+$color-bg-notification: #121212;
+$color-border-default: #21262d;
+$color-accent: #58a6ff;
+$color-accent-emphasis: #1f6feb;
+$color-error: #da3633;
+
+@keyframes progress-bar {
+    0% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3em;
+    width: 320px;
+    margin-bottom: 1rem;
+    padding: 0.5em;
+    color: #fff;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.10), 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    justify-content: space-between;
+    
+    .text {
+        font-size: 0.9rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

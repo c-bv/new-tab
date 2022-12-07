@@ -1,0 +1,23 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background: $color-bg-default;
+    overflow: hidden;
+
+    #root {
+        height: 100vh;
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

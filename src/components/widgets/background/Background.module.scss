@@ -1,0 +1,23 @@
+#backgroundImage {
+    height: 100vh;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    zoom: 100% !important;
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fadeIn ease 1s forwards;
+    -webkit-animation: fadeIn ease 1s forwards;
+    -moz-animation: fadeIn ease 1s forwards;
+    -o-animation: fadeIn ease 1s forwards;
+    -ms-animation: fadeIn ease 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

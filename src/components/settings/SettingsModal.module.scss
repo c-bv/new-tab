@@ -1,0 +1,23 @@
+@import '../../assets/scss/variables.scss';
+
+#settingsModal {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 80%;
+    width: 80%;
+    background: $color-border-default;
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    // z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
