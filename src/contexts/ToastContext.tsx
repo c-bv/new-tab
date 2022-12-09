@@ -9,8 +9,6 @@ interface Toast {
     type: string;
 }
 
-let id = 0;
-
 export const ToastProvider = ({ children }: any) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
 
@@ -18,12 +16,12 @@ export const ToastProvider = ({ children }: any) => {
         setToasts(toasts => [
             ...toasts,
             {
-                id: id++,
+                id: Math.random(),
                 message: message,
                 type: type
             },
         ]);
-    }, [setToasts ]);
+    }, [setToasts]);
 
     const removeToast = useCallback((id: number) => {
         setToasts(toasts => toasts.filter(toast => toast.id !== id));
