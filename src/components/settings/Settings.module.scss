@@ -1,0 +1,46 @@
+@import '../../assets/scss/variables.scss';
+
+#settingsModal {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    background: $color-bg-secondary;
+    border-radius: 2px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    animation: slideInFromRight 0.3s ease-in-out;
+
+    #container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        
+        #header {
+            position: relative;
+            height: 50px;
+
+            #closeButton {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        #outlet {
+            flex: 1;
+            overflow: auto;
+            padding: 10px;
+        }
+    }
+}

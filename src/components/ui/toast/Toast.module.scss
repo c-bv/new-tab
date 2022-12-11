@@ -13,11 +13,35 @@
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.10), 0 2px 15px 0 rgba(0, 0, 0, 0.05);
     overflow: hidden;
     justify-content: space-between;
-    
+    animation:
+        250ms ease slideIn,
+        250ms ease 2750ms slideOut forwards;
+
     .text {
         font-size: 0.9rem;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(150%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+    
+    100% {
+        transform: translateX(150%);
     }
 }

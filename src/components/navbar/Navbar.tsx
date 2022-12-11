@@ -1,22 +1,22 @@
-import styles from './Navbar.module.scss';
+import Button from '../ui/button/Button';
 import SettingsIcon from '../../assets/icons/SettingsIcon';
-import useToast from '../../hooks/useToast';
+import styles from './Navbar.module.scss';
 
-const Navbar = () => {
-    const { addToast } = useToast();
+interface NavbarProps {
+    openSettings: boolean;
+    setOpenSettings: (open: boolean) => void;
+}
 
-    const handleSettingsClick = () => {
-        addToast({
-            message: 'Settings clicked'
-        });
-    };
+const Navbar = ({ openSettings, setOpenSettings }: NavbarProps) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.tooltip} onClick={handleSettingsClick}>
+            <Button
+                type='icon'
+                onClick={() => setOpenSettings(!openSettings)}
+            >
                 <SettingsIcon />
-                <span className={styles.tooltipText}>Settings</span>
-            </div>
+            </Button>
         </div>
     );
 };
