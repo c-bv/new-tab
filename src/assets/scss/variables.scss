@@ -1,4 +1,5 @@
-$font-family: sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
+$font-size: 16px;
 
 $color-header-text: #f0f6fc;
 $color-fg-default: #c9d1d9;
@@ -41,4 +42,14 @@ $color-error: #da3633;
     100% {
         transform: translateX(100%);
     }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #636e72;
+    border-radius: 10px;
 }
