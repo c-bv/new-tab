@@ -1,0 +1,55 @@
+@import '../../../assets/scss/variables.scss';
+
+#container {
+    height: 100%;
+    width: 25%;
+    max-width: 300px;
+    min-width: 250px;
+    background: $color-bg-secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    h2 {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    #menuItems {
+        width: 100%;
+        flex: 1;
+        overflow-y: scroll;
+
+        .categories {
+            &:not(:last-child) {
+                border-bottom: 1px solid $color-border-default;
+                padding: 0.5em 0;
+            }
+
+            .tab {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+
+                padding: 0 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background: $color-bg-card;
+                }
+
+                &.active {
+                    background: $color-bg-card;
+                }
+            }
+        }
+    }
+}
