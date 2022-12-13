@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Google",
+        "settingsName": "google",
+        "url": "https://google.com/search"
+    },
+    {
+        "name": "DuckDuckGo",
+        "settingsName": "duckduckgo",
+        "url": "https://duckduckgo.com"
+    },
+    {
+        "name": "Bing",
+        "settingsName": "bing",
+        "url": "https://bing.com/search"
+    },
+    {
+        "name": "Ask",
+        "settingsName": "ask",
+        "url": "https://ask.com/web"
+    },
+    {
+        "name": "Yahoo",
+        "settingsName": "yahoo",
+        "url": "https://search.yahoo.com/search"
+    },
+    {
+        "name": "Qwant",
+        "settingsName": "qwant",
+        "url": "https://www.qwant.com/"
+    }
+]
