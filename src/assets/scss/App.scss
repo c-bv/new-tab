@@ -1,9 +1,12 @@
 @import 'variables';
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font: inherit;
 }
 
 :root {
@@ -12,12 +15,12 @@
 }
 
 body {
+    min-height: 100vh;
     color: #fff;
     background: $color-bg-default;
     overflow: hidden;
 
     #root {
-        height: 100vh;
 
         main {
             display: flex;
