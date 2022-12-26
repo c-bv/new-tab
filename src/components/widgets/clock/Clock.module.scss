@@ -1,0 +1,27 @@
+@import '../../../assets/scss/variables.scss';
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        font-size: 8rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -5px;
+        user-select: none;
+    }
+
+    #date {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    #greeting {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+}
