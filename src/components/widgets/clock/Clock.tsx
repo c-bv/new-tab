@@ -2,45 +2,48 @@ import { useEffect, useState } from 'react';
 import styles from './Clock.module.scss';
 
 interface Time {
-    hours: string;
-    minutes: string;
-    seconds: string;
+    time: string;
     format: string;
 }
 
 const Clock = () => {
-
-    const [date, setDate] = useState({
-        hours: '00',
-        minutes: '00',
-        seconds: '00',
+    const [clock, setClock] = useState({
+        time: '',
         format: '24'
     } as Time);
-    
-    const [showSeconds, setShowSeconds] = useState(false);
+    const [showSeconds, setShowSeconds] = useState(true);
 
     const startTime = () => {
         const currentDate = new Date();
-        let hours = currentDate.getHours().toString().padStart(2, '0');
-        let minutes = currentDate.getMinutes().toString().padStart(2, '0');
-        let seconds = currentDate.getSeconds().toString().padStart(2, '0');
-        setDate({
-            ...date,
-            hours,
-            minutes,
-            seconds
+        let hours = currentDate.getHours();
+        let minutes = currentDate.getMinutes();
+        let seconds = currentDate.getSeconds();
+
+        if (clock.format === '12') {
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+        }
+
+        const formatHours = hours.toString().padStart(2, '0');
+        const formatMinutes = minutes.toString().padStart(2, '0');
+        const formatSeconds = seconds.toString().padStart(2, '0');
+
+        setClock({
+            ...clock,
+            time: `${formatHours}:${formatMinutes}${showSeconds ? `:${formatSeconds}` : ''}`
         });
-        setTimeout(startTime, 500);
+
+        setTimeout(startTime, 1000);
     };
 
     useEffect(() => {
         startTime();
-        console.log(date);
+        // eslint-disable-next-line
     }, []);
 
     return (
         <div id={styles.container}>
-            <h1>{date.hours}:{date.minutes}{showSeconds && `:${date.seconds}`}</h1>
+            <h1>{clock.time}</h1>
         </div>
     );
 };
