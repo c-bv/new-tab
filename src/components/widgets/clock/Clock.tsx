@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react';
+import useSettings from '../../../hooks/useSettings';
 import styles from './Clock.module.scss';
 
-interface Time {
+interface ClockProps {
     time: string;
     format: string;
 }
 
 const Clock = () => {
-    const [clock, setClock] = useState({
-        time: '',
-        format: '24'
-    } as Time);
-    const [showSeconds, setShowSeconds] = useState(true);
+    const { settings } = useSettings();
 
-    const startTime = () => {
+    const [clock, setClock] = useState<ClockProps>({
+        time: '',
+        format: settings.clock.format
+    });
+
+    const renderTime = () => {
         const currentDate = new Date();
         let hours = currentDate.getHours();
         let minutes = currentDate.getMinutes();
         let seconds = currentDate.getSeconds();
 
-        if (clock.format === '12') {
+        if (settings.clock.format === '12') {
             hours = hours % 12;
             hours = hours ? hours : 12;
         }
@@ -27,17 +29,17 @@ const Clock = () => {
         const formatHours = hours.toString().padStart(2, '0');
         const formatMinutes = minutes.toString().padStart(2, '0');
         const formatSeconds = seconds.toString().padStart(2, '0');
+        const formatTime = `${formatHours}:${formatMinutes}${settings.clock.showSeconds ? `:${formatSeconds}` : ''}`;
 
         setClock({
-            ...clock,
-            time: `${formatHours}:${formatMinutes}${showSeconds ? `:${formatSeconds}` : ''}`
+            time: formatTime,
+            format: settings.clock.format
         });
-
-        setTimeout(startTime, 1000);
+        setTimeout(renderTime, 1000);
     };
 
     useEffect(() => {
-        startTime();
+        renderTime();
         // eslint-disable-next-line
     }, []);
 
