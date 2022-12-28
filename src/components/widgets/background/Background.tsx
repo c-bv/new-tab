@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import styles from './Background.module.scss';
 import convertBase64 from '../../../utils/convertBase64';
+import styles from './Background.module.scss';
 
 const Background = () => {
     const backgroundRef = useRef<HTMLDivElement>(null);
