@@ -1,23 +1,20 @@
-import { useState } from 'react';
+import './assets/scss/App.scss';
 import Navbar from './components/navbar/Navbar';
-import Widgets from './components/widgets/Widgets';
 import Settings from './components/settings/Settings';
 import Background from './components/widgets/background/Background';
-import './assets/scss/App.scss';
+import Widgets from './components/widgets/Widgets';
+import useSettings from './hooks/useSettings';
 
 const App = () => {
-    const [openSettings, setOpenSettings] = useState(false);
+    const { settings, toggleSettingsModal } = useSettings();
 
     return (
         <>
             <Background />
             <main>
-                <Navbar
-                    openSettings={openSettings}
-                    setOpenSettings={setOpenSettings}
-                />
+                <Navbar toggleSettingsModal={toggleSettingsModal} />
                 <Widgets />
-                {openSettings && <Settings setOpenSettings={setOpenSettings} />}
+                {settings.modal.open && <Settings toggleSettingsModal={toggleSettingsModal} />}
             </main>
         </>
     );

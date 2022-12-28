@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import LeftMenu from './leftMenu/LeftMenu';
-import Button from '../ui/button/Button';
-import SearchBar from './sections/SearchBar';
 import CrossIcon from '../../assets/icons/CrossIcon';
+import Button from '../ui/button/Button';
+import LeftMenu from './leftMenu/LeftMenu';
+import SearchBar from './sections/SearchBar';
 import styles from './Settings.module.scss';
 
 interface SettingsProps {
-    setOpenSettings: (open: boolean) => void;
+    toggleSettingsModal: () => void;
 }
 
-const Settings = ({ setOpenSettings }: SettingsProps) => {
+const Settings = ({ toggleSettingsModal }: SettingsProps) => {
     const [activeTab, setActiveTab] = useState('navbar');
 
     const renderTabContent = () => {
@@ -67,7 +67,7 @@ const Settings = ({ setOpenSettings }: SettingsProps) => {
                     <Button
                         id={styles.closeButton}
                         type='icon'
-                        onClick={() => setOpenSettings(false)}
+                        onClick={toggleSettingsModal}
                     >
                         <CrossIcon />
                     </Button>

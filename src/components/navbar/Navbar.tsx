@@ -1,19 +1,18 @@
-import Button from '../ui/button/Button';
 import SettingsIcon from '../../assets/icons/SettingsIcon';
+import Button from '../ui/button/Button';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
-    openSettings: boolean;
-    setOpenSettings: (open: boolean) => void;
+    toggleSettingsModal: () => void;
 }
 
-const Navbar = ({ openSettings, setOpenSettings }: NavbarProps) => {
+const Navbar = ({ toggleSettingsModal }: NavbarProps) => {
 
     return (
         <div className={styles.container}>
             <Button
                 type='icon'
-                onClick={() => setOpenSettings(!openSettings)}
+                onClick={toggleSettingsModal}
             >
                 <SettingsIcon />
             </Button>

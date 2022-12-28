@@ -3,6 +3,9 @@ import { createContext, useState } from 'react';
 const SettingsContext = createContext({} as any);
 
 interface Settings {
+    modal: {
+        open: boolean;
+    };
     clock: {
         format: string;
         showSeconds: boolean;
@@ -15,6 +18,9 @@ interface Settings {
 export const SettingsProvider = ({ children }: any) => {
 
     const [settings, setSettings] = useState<Settings>({
+        modal: {
+            open: false
+        },
         clock: {
             format: '24',
             showSeconds: true
@@ -24,10 +30,20 @@ export const SettingsProvider = ({ children }: any) => {
         }
     });
 
+    const toggleSettingsModal = () => {
+        setSettings({
+            ...settings,
+            modal: {
+                open: !settings.modal.open
+            }
+        });
+    };
+
     return (
         <SettingsContext.Provider
             value={{
-                settings, setSettings
+                settings, setSettings,
+                toggleSettingsModal
             }}
         >
             {children}
