@@ -23,7 +23,7 @@ export const SettingsProvider = ({ children }: any) => {
         },
         clock: {
             format: '24',
-            showSeconds: true
+            showSeconds: false
         },
         search: {
             engine: 'google'
