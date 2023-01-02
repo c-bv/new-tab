@@ -68,7 +68,7 @@ const SearchBar = () => {
                                     key={index}
                                     type='icon'
                                     onClick={() => handleSearchEngineChange(engine)}
-                                    sx={{ gap: '0.25rem'}}
+                                    sx={{ gap: '0.25rem' }}
                                 >
                                     {renderSearchEngineIcon(engine.name)}
                                     {engine.name}
